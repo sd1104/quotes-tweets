@@ -1,0 +1,44 @@
+@media screen and (max-width:480px){
+  .QuoteWrapper {
+    min-height: 1080px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .MainWrapper {
+      height: 300px;
+      overflow: hidden;
+      width: 380px;
+      background-color: #dddddd;
+    }
+  }
+}
+
+@media screen and (min-width:481px){
+  .QuoteWrapper {
+    min-height: 1080px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .MainWrapper {
+      height: 300px;
+      overflow: hidden;
+      width: 380px;
+      background-color: green;
+    }
+  }
+}
+
+@media screen and (min-width:991px){
+  .QuoteWrapper {
+    min-height: 1080px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .MainWrapper {
+      height: 300px;
+      overflow: hidden;
+      width: 380px;
+      background-color: red;
+    }
+  }
+}
