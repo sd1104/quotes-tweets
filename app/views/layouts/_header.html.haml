@@ -10,9 +10,9 @@
             マイページ
             %span.sr-only (current)
         %li.nav-item
-          %a.nav-link{:href => "#"} 新規投稿
+          %a.nav-link{ :href => new_quote_path } 新規投稿
         %li.nav-item
-          %a.nav-link.disabled{:href => destroy_user_session_path} ログアウト
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
       - else
         %li.nav-item.active
           %a.nav-link{:href => root_path }

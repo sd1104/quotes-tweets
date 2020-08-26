@@ -1,44 +1,33 @@
 @media screen and (max-width:480px){
-  .QuoteWrapper {
-    min-height: 1080px;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    .MainWrapper {
-      height: 300px;
-      overflow: hidden;
-      width: 380px;
-      background-color: #dddddd;
+  .Wrapper {
+    min-height: calc( 100vh - 110px);
+  }
+  .space {
+    margin: 40px 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .QuoteIcon {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    top: 70px;
+    right: 25px;
+    .quote {
+      font-size: 69px;
+      .fasfa-quote-right {
+        height: 50px;
+        width: 50px;
+      }
     }
   }
+
 }
 
 @media screen and (min-width:481px){
-  .QuoteWrapper {
-    min-height: 1080px;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    .MainWrapper {
-      height: 300px;
-      overflow: hidden;
-      width: 380px;
-      background-color: green;
-    }
-  }
+
 }
 
 @media screen and (min-width:991px){
-  .QuoteWrapper {
-    min-height: 1080px;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    .MainWrapper {
-      height: 300px;
-      overflow: hidden;
-      width: 380px;
-      background-color: red;
-    }
-  }
+
 }

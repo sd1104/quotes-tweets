@@ -1,4 +1,20 @@
-.QuoteWrapper
-  .MainWrapper
-    google
+.Wrapper
+  .container-login
+    .QuoteCards
+      - @quotes.each do |quote|
+        = link_to new_quote_path, class: "badge badge-primary QuoteIcon" do
+          .quote
+            ”
+        .card
+          .card-header
+            = quote.citation
+          .card-body
+            %h4.card-title
+              = quote.title
+            %p.card-text
+              = quote.explanation
+            %a.card-link{:href => "#!"} Card link
+            %a.card-link{:href => "#!"} Another link
+
+
 
