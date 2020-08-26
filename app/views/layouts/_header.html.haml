@@ -1,0 +1,27 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => root_path } QuoteTweet
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      - if user_signed_in?
+        %li.nav-item.active
+          %a.nav-link{:href => "#"}
+            マイページ
+            %span.sr-only (current)
+        %li.nav-item
+          %a.nav-link{:href => "#"} 新規投稿
+        %li.nav-item
+          %a.nav-link.disabled{:href => destroy_user_session_path} ログアウト
+      - else
+        %li.nav-item.active
+          %a.nav-link{:href => root_path }
+            ゲストさん
+            %span.sr-only (current)
+        %li.nav-item
+          %a.nav-link{:href => new_user_registration_path} 新規登録
+        %li.nav-item
+          %a.nav-link{:href => new_user_session_path} ログイン
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "text"}/
+      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
