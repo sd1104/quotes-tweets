@@ -3,7 +3,8 @@ class CreateQuotes < ActiveRecord::Migration[6.0]
     create_table :quotes do |t|
       t.string :title, null: false
       t.string :citation, null: false
-      t.text :explanation, nul: false
+      t.text :explanation, null: false
+      t.references :user, null: false
       t.timestamps
     end
   end

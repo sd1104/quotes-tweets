@@ -1,0 +1,38 @@
+@media screen and (max-width:480px){
+  .Wrapper {
+    min-height: calc( 100vh - 110px);
+  }
+  .space {
+    margin: 40px 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .QuoteIcon {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    top: 70px;
+    right: 25px;
+    .quote {
+      font-size: 69px;
+      color: #fff !important;
+    }
+  }
+  .card-explanation {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .quote {
+    text-decoration: none !important;
+    color: black !important;
+  }
+}
+
+@media screen and (min-width:481px){
+
+}
+
+@media screen and (min-width:991px){
+
+}

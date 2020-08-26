@@ -1,0 +1,15 @@
+.Wrapper
+  .container-login
+    %p.text-primary
+      = current_user.nickname
+      さん
+    .mypage-index
+      %ul
+        %li.nav-item.active
+          %a.nav-link.mypage-link{:href => "#"} いいね一覧
+        %li.nav-item
+          %a.nav-link.mypage-link{:href => "#"} フォロー
+        %li.nav-item
+          %a.nav-link.mypage-link{:href => "#"} フォロワー
+        %li.nav-item
+          %a.nav-link.mypage-link{:href => user_path(current_user.id)} 投稿一覧

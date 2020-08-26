@@ -1,10 +1,10 @@
 .Wrapper
   .container-login
+    %p.text-primary
+      = @nickname
+      さんの投稿一覧
     .QuoteCards
       - @quotes.each do |quote|
-        = link_to new_quote_path, class: "badge badge-primary QuoteIcon" do
-          .quote
-            ”
         = link_to quote_path(quote), class: "quote" do
           .card
             .card-header
@@ -14,10 +14,3 @@
                 = quote.title
               %p.card-text.card-explanation
                 = quote.explanation
-              %br/
-              投稿者:
-              = link_to user_path(quote.user.id) do
-                = quote.user.nickname
-
-
-
