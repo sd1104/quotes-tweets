@@ -1,10 +1,9 @@
 .Wrapper
   .container-login
+    %p.text-primary
+      お気に入り一覧
     .QuoteCards
-      - @quotes.each do |quote|
-        = link_to new_quote_path, class: "badge badge-primary QuoteIcon" do
-          .quote
-            ”
+      - @favorite_quotes.each do |quote|
         = link_to quote_path(quote), class: "quote" do
           .card
             .card-header
@@ -27,6 +26,3 @@
                     = link_to quote_favorites_path(quote.id), method: :post, class: "quote" do
                       ♡
                     = quote.favorites.count
-
-
-

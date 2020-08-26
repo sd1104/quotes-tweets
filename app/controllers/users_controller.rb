@@ -9,4 +9,10 @@ class UsersController < ApplicationController
     @quotes = user.quotes.order('created_at DESC')
   end
 
+  def favorite
+    @user = User.find(current_user.id)
+    @quotes = @user.quotes
+    @favorite_quotes = @user.favorite_quotes
+  end
+
 end

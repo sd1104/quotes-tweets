@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :quotes
+  has_many :favorites
+  has_many :favorite_quotes, through: :favorites, source: :quote
 
   validates :nickname, presence: true
 end
