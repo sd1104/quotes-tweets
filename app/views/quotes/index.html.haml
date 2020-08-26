@@ -5,16 +5,18 @@
         = link_to new_quote_path, class: "badge badge-primary QuoteIcon" do
           .quote
             ”
-        .card
-          .card-header
-            = quote.citation
-          .card-body
-            %h4.card-title
-              = quote.title
-            %p.card-text
-              = quote.explanation
-            %a.card-link{:href => "#!"} Card link
-            %a.card-link{:href => "#!"} Another link
+        = link_to quote_path(quote), class: "quote" do
+          .card
+            .card-header
+              = quote.citation
+            .card-body
+              %h4.card-title
+                = quote.title
+              %p.card-text.card-explanation
+                = quote.explanation
+              %br/
+              %a.card-link{:href => quote_path(quote) } Link
+              %a.card-link{:href => "#!"} Another link
 
 
 

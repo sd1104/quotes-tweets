@@ -15,13 +15,18 @@
     right: 25px;
     .quote {
       font-size: 69px;
-      .fasfa-quote-right {
-        height: 50px;
-        width: 50px;
-      }
+      color: #fff !important;
     }
   }
-
+  .card-explanation {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .quote {
+    text-decoration: none !important;
+    color: black !important;
+  }
 }
 
 @media screen and (min-width:481px){

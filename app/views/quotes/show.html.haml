@@ -1,0 +1,11 @@
+.Wrapper
+  .container-login
+    .QuoteCards
+      .card
+        .card-header
+          = @quote.citation
+        .card-body
+          %h4.card-title
+            = @quote.title
+          %p.card-text
+            = @quote.explanation

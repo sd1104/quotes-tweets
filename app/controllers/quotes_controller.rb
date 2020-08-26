@@ -17,6 +17,10 @@ class QuotesController < ApplicationController
     end
   end
 
+  def show
+    @quote = Quote.find(params[:id])
+  end
+
   private
   def quote_params
     params.require(:quote).permit(:title, :citation, :explanation).merge(user_id: current_user.id)
