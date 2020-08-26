@@ -6,7 +6,7 @@
     .mypage-index
       %ul
         %li.nav-item.active
-          %a.nav-link.mypage-link{:href => "#"} いいね一覧
+          %a.nav-link.mypage-link{:href => user_favorite_path(current_user.id)} お気に入り一覧
         %li.nav-item
           %a.nav-link.mypage-link{:href => "#"} フォロー
         %li.nav-item
