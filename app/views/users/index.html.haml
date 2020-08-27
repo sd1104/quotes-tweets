@@ -6,10 +6,14 @@
     .mypage-index
       %ul
         %li.nav-item.active
-          %a.nav-link.mypage-link{:href => user_favorite_path(current_user.id)} お気に入り一覧
+          %a.nav-link.mypage-link.inline{:href => user_favorite_path(current_user.id)} お気に入り
+          = current_user.favorites.count
         %li.nav-item
-          %a.nav-link.mypage-link{:href => "#"} フォロー
+          %a.nav-link.mypage-link.inline{:href => follows_user_path(current_user.id)} フォロー
+          = current_user.followings.count
         %li.nav-item
-          %a.nav-link.mypage-link{:href => "#"} フォロワー
+          %a.nav-link.mypage-link.inline{:href => followers_user_path(current_user.id)} フォロワー
+          = current_user.followers.count
         %li.nav-item
-          %a.nav-link.mypage-link{:href => user_path(current_user.id)} 投稿一覧
+          %a.nav-link.mypage-link.inline{:href => user_path(current_user.id)} 投稿
+          = current_user.quotes.count

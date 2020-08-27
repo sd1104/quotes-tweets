@@ -30,7 +30,19 @@
 
   .favorite-count {
     display: inline-block;
-    margin-left: 200px;
+    margin-left: 155px;
+  }
+
+  .FollowBtn {
+    font-size: 10px !important;
+    font-weight: bold !important;
+    padding: 5px;
+    margin-left: 5px;
+  }
+
+  .inline {
+    display: inline-block !important;
+    width: 120px;
   }
 }
 

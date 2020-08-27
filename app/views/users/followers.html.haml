@@ -1,0 +1,15 @@
+.Wrapper
+  .container-login
+    %p.text-primary
+      フォロワー 一覧
+    - @users.each do |user|
+      %hr/
+      %p
+        = link_to user.nickname, user_path(user.id)
+        - if current_user != user
+          = link_to user_relationships_path(user), method: :post, class: "quote" do
+            %button.btn.btn-outline-primary.FollowBtn{:type => "button"} フォローする
+        - else
+          = link_to user_relationships_path(user), method: :delete, class: "quote" do
+            %button.btn.btn-primary.FollowBtn{:type => "button"} フォロー中
+

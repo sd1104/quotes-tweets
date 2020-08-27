@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   get 'favorites/create'
   get 'favorites/destroy'
   devise_for :users
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :show] do
     get 'favorite'
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
   end
 
 end

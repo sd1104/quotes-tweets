@@ -15,4 +15,14 @@ class UsersController < ApplicationController
     @favorite_quotes = @user.favorite_quotes
   end
 
+  def follows
+    user = User.find(current_user.id)
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(current_user.id)
+    @users = user.followers
+  end
+
 end
