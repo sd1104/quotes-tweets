@@ -19,6 +19,8 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.includes(:user)
   end
 
   private

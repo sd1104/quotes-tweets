@@ -44,6 +44,30 @@
     display: inline-block !important;
     width: 120px;
   }
+
+  .CommentIndex {
+    height: 180px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  #comment_text {
+    height: 100px;
+    margin-right: 5px;
+  }
+
+  .CommentSubmitBtn {
+    width: 50px;
+    padding: 3px;
+    position: absolute;
+    top: 63px;
+    right: 2px;
+    word-wrap: wrap;
+  }
+
+  .form-group {
+    position: relative;
+  }
 }
 
 @media screen and (min-width:481px){

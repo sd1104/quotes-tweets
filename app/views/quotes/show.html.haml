@@ -9,3 +9,20 @@
             = @quote.title
           %p.card-text
             = @quote.explanation
+    %br/
+    .CommentBox
+      %h6 コメント
+      .card.CommentIndex
+        .card-body
+          - @comments.each do |comment|
+            %p
+              = comment.user.nickname
+            %p  
+              = comment.text
+            %br/
+      %br/
+      .FormBox
+        = form_with model: [@quote, @comment] do |f|
+          .form-group
+            = f.text_area :text, autofocus: true, autocomplete: 'title', class: 'form-control', required: true
+            = f.submit '>', class: 'btn-primary CommentSubmitBtn'
