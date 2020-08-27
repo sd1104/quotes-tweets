@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
       redirect_to quote_path(params[:quote_id])
     else
       redirect_to quote_path(params[:quote_id])
-      binding.pry
     end
   end
 

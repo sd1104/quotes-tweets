@@ -27,11 +27,16 @@
     text-decoration: none !important;
     color: black !important;
   }
+  .CountBox {
+    display: flex;
+    .comment-count {
 
-  .favorite-count {
-    display: inline-block;
-    margin-left: 155px;
+    }
+    .favorite-count {
+      margin-left: 130px;
+    }
   }
+
 
   .FollowBtn {
     font-size: 10px !important;
