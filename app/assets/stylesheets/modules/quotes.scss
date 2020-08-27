@@ -39,6 +39,11 @@
     padding: 5px;
     margin-left: 5px;
   }
+
+  .inline {
+    display: inline-block !important;
+    width: 120px;
+  }
 }
 
 @media screen and (min-width:481px){

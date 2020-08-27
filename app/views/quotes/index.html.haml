@@ -18,7 +18,7 @@
               投稿者:
               = link_to user_path(quote.user.id) do
                 = quote.user.nickname
-                - if current_user != quote.user
+                - if user_signed_in? && current_user != quote.user
                   - if quote.user.followed_by?(current_user)
                     = link_to user_relationships_path(quote.user.id), method: :delete, class: "quote" do
                       %button.btn.btn-primary.FollowBtn{:type => "button"} フォロー中
@@ -26,15 +26,16 @@
                     = link_to user_relationships_path(quote.user.id), method: :post, class: "quote" do
                       %button.btn.btn-outline-primary.FollowBtn{:type => "button"} フォローする
               %hr/
-              .favorite-count
-                - if quote.favorited_by?(current_user)
-                  = link_to quote_favorites_path(quote.id), method: :delete, class: "quote", data: { confirm: "#{quote.user.niciname}さんのフォローを解除" } do
-                    ❤︎
-                  = quote.favorites.count
-                - else
-                  = link_to quote_favorites_path(quote.id), method: :post, class: "quote" do
-                    ♡
-                  = quote.favorites.count
+              - if user_signed_in?
+                .favorite-count
+                  - if quote.favorited_by?(current_user)
+                    = link_to quote_favorites_path(quote.id), method: :delete, class: "quote", data: { confirm: "#{quote.user.niciname}さんのフォローを解除" } do
+                      ❤︎
+                    = quote.favorites.count
+                  - else
+                    = link_to quote_favorites_path(quote.id), method: :post, class: "quote" do
+                      ♡
+                    = quote.favorites.count
 
 
 
