@@ -1,7 +1,7 @@
 class QuotesController < ApplicationController
 
   def index
-    @quotes = Quote.includes(:user).order('created_at DESC')
+    @quotes = Quote.includes(:comments).order('created_at DESC')
   end
 
   def new
@@ -19,6 +19,8 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.includes(:user).order("created_at DESC")
   end
 
   private

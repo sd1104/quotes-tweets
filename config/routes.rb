@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :quotes, only: [:index, :new, :create, :show] do
     resource :favorites, only: [:create, :destroy]
+    resource :comments, only: :create
   end
   resources :users, only: [:index, :show] do
     get 'favorite'

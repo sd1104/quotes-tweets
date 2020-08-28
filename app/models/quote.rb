@@ -1,6 +1,7 @@
 class Quote < ApplicationRecord
   belongs_to :user
   has_many :favorites
+  has_many :comments
 
 
   validates :title, :citation, :explanation, presence: true

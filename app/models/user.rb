@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_quotes, through: :favorites, source: :quote
 
+  has_many :comments
+
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
   has_many :followings, through: :active_relationships, source: :follower
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
