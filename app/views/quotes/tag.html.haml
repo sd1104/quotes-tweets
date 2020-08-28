@@ -2,13 +2,8 @@
   .container-login
     - if params[:name] == nil
     - else
-      .row
-        .col-xs-12.col-lg-12.col-md-12.col-sm-12
-          .hashtag-name
-            - @tags.sort.reverse.each do |count|
-              - count[1].each do |tag|
-                %p
-                  = link_to  "##{tag.name} (#{tag.quotes.count}) 件","/quote/tag/#{tag.name}",data: {"turbolinks" => false}
+      %h6.tag-search-title
+        =  "##{@tag.name} : #{@quote.count} 件"
       .flex-box
         - @quote.each do |quote|
           .post-image-index-post-box
@@ -21,7 +16,6 @@
                 %h4.card-title
                   = quote.title
                 %p.card-text
-                  = quote.explanation.sub(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/, '') 
                   = render_with_tags(quote.explanation)
                 %hr/
                 投稿者:
@@ -50,5 +44,12 @@
                         = link_to quote_favorites_path(quote), method: :post, class: "quote" do
                           ♡
                         = quote.favorites.count
+    -# .row
+    -#   .col-xs-12.col-lg-12.col-md-12.col-sm-12
+    -#     .hashtag-name
+    -#       - @tags.sort.reverse.each do |count|
+    -#         - count[1].each do |tag|
+    -#           %p
+    -#             = link_to  "##{tag.name} (#{tag.quotes.count}) 件","/quote/tag/#{tag.name}",data: {"turbolinks" => false}
 
 

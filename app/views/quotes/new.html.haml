@@ -1,16 +1,16 @@
 .Wrapper
   .container-login
-    %h1 新規投稿
+    %h4 New Quote
     = form_with model: @quote do |f|
       .form-group
         = f.label :言葉
         = f.text_area :title, autofocus: true, autocomplete: 'title', class: 'form-control', required: true
       .form-group
-        = f.label :出自
+        = f.label :発言者or出典
         = f.text_field :citation, autocomplete: 'current-citation', class: 'form-control', required: true
       .form-group
-        = f.label :説明
+        = f.label :解説やハッシュタグ
         = f.text_area :explanation, autocomplete: 'current-explanation', class: 'form-control', required: true
       .space
       .form-group
-        = f.submit '投稿', class: 'btn btn-primary btn-block'
+        = f.submit 'POST', class: 'btn btn-primary btn-block'

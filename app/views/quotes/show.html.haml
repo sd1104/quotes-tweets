@@ -8,7 +8,6 @@
           %h4.card-title
             = @quote.title
           %p.card-text
-            = @quote.explanation.sub(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/, '') 
             = render_with_tags(@quote.explanation)
           %hr/
           投稿者:
