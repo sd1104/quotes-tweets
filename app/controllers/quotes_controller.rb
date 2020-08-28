@@ -25,7 +25,7 @@ class QuotesController < ApplicationController
 
   private
   def quote_params
-    params.require(:quote).permit(:title, :citation, :explanation).merge(user_id: current_user.id)
+    params.require(:quote).permit(:title, :citation, :explanation, :tag_ids).merge(user_id: current_user.id)
   end
 
 end
