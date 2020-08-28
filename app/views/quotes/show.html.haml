@@ -44,12 +44,13 @@
           - @comments.each do |comment|
             %p
               = comment.user.nickname
+              = comment.created_at
             %p  
               = comment.text
             %br/
       %br/
       .FormBox
-        = form_with model: [@quote, @comment] do |f|
+        = form_with model: [@quote, @comment], id: "new_comment" do |f|
           .form-group
             = f.text_area :text, autofocus: true, autocomplete: 'title', class: 'form-control', required: true
             = f.submit '>', class: 'btn-primary CommentSubmitBtn'

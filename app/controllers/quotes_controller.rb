@@ -20,7 +20,7 @@ class QuotesController < ApplicationController
   def show
     @quote = Quote.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.includes(:user)
+    @comments = Comment.includes(:user).order("created_at DESC")
   end
 
   private
