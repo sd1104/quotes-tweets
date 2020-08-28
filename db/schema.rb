@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_085219) do
   end
 
   create_table "quote_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "quote_id"
-    t.bigint "tag_id"
+    t.bigint "quote_id", null: false
+    t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["quote_id"], name: "index_quote_tags_on_quote_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_085219) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

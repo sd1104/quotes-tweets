@@ -13,7 +13,8 @@
               %h4.card-title
                 = quote.title
               %p.card-text.card-explanation
-                = quote.explanation
+                = quote.explanation.sub(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/, '') 
+                = render_with_tags(quote.explanation)
               %hr/
               投稿者:
               = link_to user_path(quote.user.id) do

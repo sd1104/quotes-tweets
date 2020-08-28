@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     resource :comments, only: :create
   end
 
-  end
+  get '/quote/tag/:name', to: "quotes#tag"
+  get '/quote/tag' => 'quotes#tag'
+  
+end
