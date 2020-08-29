@@ -1,14 +1,15 @@
 .Wrapper
-  .container-login
+  .container
     - if params[:name] == nil
     - else
       %h6.tag-search-title
         =  "##{@tag.name} : #{@quote.count} 件"
-      .flex-box
+      .QuoteCards
         - @quote.each do |quote|
-          .post-image-index-post-box
-            %p.index-post-box-top
+          .BOX
+            .block
               = quote.created_at.strftime("%Y/%m/%d")
-            = render partial: 'layouts/quotes-list', locals: { quote: quote}
+            .block
+              = render partial: 'layouts/quotes-list', locals: { quote: quote}
 
 

@@ -35,6 +35,7 @@ class QuotesController < ApplicationController
    end
 
    def search
+    @keyword = params[:keyword]
     @quotes = Quote.search(params[:keyword]).order("created_at DESC")
    end
 
