@@ -19,12 +19,23 @@
         }
       }
       .card {
+        .card-header {
+          font-size: 14px;
+        }
         .card-body {
+          .card-title {
+            font-size: 22px;
+            font-weight: 300;
+          }
+          .card-text {
+            font-size: 14px;
+          }
+          .poster {
+            font-size: 14px;
+            margin: 0;
+          }
           .CountBox {
             display: flex;
-            .favorite-count {
-              margin-left: 130px;
-            }
           }
         }
       }
@@ -41,9 +52,16 @@
     border-bottom: 1px solid transparent;
   }
 
+  hr {
+    margin: 4px 0 !important;
+  }
+
   // _favorite
   .fas.fa-heart {
     color: red;
+  }
+  .favorite-count {
+    margin-left: 130px;
   }
 
   // _follow
@@ -58,6 +76,9 @@
   .inline {
     display: inline-block !important;
     width: 120px;
+  }
+  .inline2 {
+    display: inline-block !important;
   }
   .MypageList {
     margin-left: 20px;
@@ -123,9 +144,6 @@
         .card-body {
           .CountBox {
             display: flex;
-            .favorite-count {
-              margin-left: 130px;
-            }
           }
         }
       }
@@ -154,6 +172,9 @@
 // _favorite
 .fas.fa-heart {
   color: red;
+}
+.favorite-count {
+  margin-left: 130px;
 }
 
 // users#index
@@ -225,9 +246,6 @@
           .card-body {
             .CountBox {
               display: flex;
-              .favorite-count {
-                margin-left: 130px;
-              }
             }
           }
         }
@@ -256,6 +274,9 @@
   // _favorite
   .fas.fa-heart {
     color: red;
+  }
+  .favorite-count {
+    margin-left: 130px;
   }
 
   // users#index
