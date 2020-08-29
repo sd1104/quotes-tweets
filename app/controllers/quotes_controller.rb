@@ -20,12 +20,23 @@ class QuotesController < ApplicationController
   def show
     @quote = Quote.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.includes(:user).order("created_at DESC")
+    @comments = Comment.includes(:user).where(quote_id: params[:id]).order("created_at DESC")
   end
+
+  def tag
+    @user = current_user
+    if params[:name].nil?
+      @tags = Tag.all.to_a.group_by{ |tag| tag.quotes.count}
+    else
+      @tag = Tag.find_by(name: params[:name])
+      @quote = @tag.quotes.reverse_order
+      @tags = Tag.all.to_a.group_by{ |tag| tag.quotes.count}
+    end
+   end
 
   private
   def quote_params
-    params.require(:quote).permit(:title, :citation, :explanation).merge(user_id: current_user.id)
+    params.require(:quote).permit(:title, :citation, :explanation, :tag_ids).merge(user_id: current_user.id)
   end
 
 end

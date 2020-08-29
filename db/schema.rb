@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_132656) do
+ActiveRecord::Schema.define(version: 2020_08_28_085219) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2020_08_27_132656) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "quote_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "quote_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quote_id"], name: "index_quote_tags_on_quote_id"
+    t.index ["tag_id"], name: "index_quote_tags_on_tag_id"
+  end
+
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "citation", null: false
@@ -46,6 +55,13 @@ ActiveRecord::Schema.define(version: 2020_08_27_132656) do
     t.integer "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,4 +82,6 @@ ActiveRecord::Schema.define(version: 2020_08_27_132656) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "quotes"
   add_foreign_key "favorites", "users"
+  add_foreign_key "quote_tags", "quotes"
+  add_foreign_key "quote_tags", "tags"
 end
