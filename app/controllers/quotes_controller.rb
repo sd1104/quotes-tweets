@@ -34,7 +34,8 @@ class QuotesController < ApplicationController
     end
    end
 
-   def tag_index
+   def search
+    @quotes = Quote.search(params[:keyword]).order("created_at DESC")
    end
 
   private
