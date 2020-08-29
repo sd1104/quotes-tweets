@@ -10,6 +10,8 @@
             マイページ
             %span.sr-only (current)
         %li.nav-item
+          %a.nav-link{ :href => tags_path } ハッシュタグ一覧
+        %li.nav-item
           %a.nav-link{ :href => new_quote_path } 新規投稿
         %li.nav-item
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"

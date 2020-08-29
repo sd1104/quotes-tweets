@@ -34,6 +34,9 @@ class QuotesController < ApplicationController
     end
    end
 
+   def tag_index
+   end
+
   private
   def quote_params
     params.require(:quote).permit(:title, :citation, :explanation, :tag_ids).merge(user_id: current_user.id)

@@ -1,0 +1,5 @@
+.Wrapper
+  .container-login
+    - @tags.each do |tag|
+      = link_to "/quote/tag/#{tag.name.delete("#")}" do
+        = "##{tag.name}"
