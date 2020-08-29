@@ -1,0 +1,7 @@
+- @comments.each do |comment|
+  %p
+    = comment.user.nickname
+    = comment.created_at
+  %p  
+    = comment.text
+  %br/

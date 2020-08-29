@@ -1,16 +1,8 @@
 .Wrapper
-  .container-login
+  .container
     %p.text-primary
       = @nickname
       さんの投稿一覧
     .QuoteCards
       - @quotes.each do |quote|
-        = link_to quote_path(quote), class: "quote" do
-          .card
-            .card-header
-              = quote.citation
-            .card-body
-              %h4.card-title
-                = quote.title
-              %p.card-text.card-explanation
-                = quote.explanation
+        = render partial: 'layouts/quotes-list', locals: { quote: quote}

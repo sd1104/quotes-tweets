@@ -1,28 +1,7 @@
 .Wrapper
-  .container-login
+  .container
     %p.text-primary
       お気に入り一覧
     .QuoteCards
       - @favorite_quotes.each do |quote|
-        = link_to quote_path(quote), class: "quote" do
-          .card
-            .card-header
-              = quote.citation
-            .card-body
-              %h4.card-title
-                = quote.title
-              %p.card-text.card-explanation
-                = quote.explanation
-              %hr/
-              投稿者:
-              = link_to user_path(quote.user.id) do
-                = quote.user.nickname
-                .favorite-count
-                  - if quote.favorited_by?(current_user)
-                    = link_to quote_favorites_path(quote.id), method: :delete, class: "quote" do
-                      ❤︎
-                    = quote.favorites.count
-                  - else
-                    = link_to quote_favorites_path(quote.id), method: :post, class: "quote" do
-                      ♡
-                    = quote.favorites.count
+        = render partial: 'layouts/quotes-list', locals: { quote: quote}

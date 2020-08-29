@@ -1,0 +1,7 @@
+- if user_signed_in? && current_user != quote.user
+  - if quote.user.followed_by?(current_user)
+    = link_to user_relationships_path(quote.user.id), method: :delete, class: "quote", data: { confirm: "#{quote.user.nickname}さんのフォローを解除" } do
+      %button.btn.btn-primary.FollowBtn{:type => "button"} フォロー中
+  - else
+    = link_to user_relationships_path(quote.user.id), method: :post, class: "quote" do
+      %button.btn.btn-outline-primary.FollowBtn{:type => "button"} フォローする

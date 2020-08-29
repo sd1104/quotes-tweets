@@ -1,53 +1,13 @@
 .Wrapper
   .container-login
     .QuoteCards
-      .card
-        .card-header
-          = @quote.citation
-        .card-body
-          %h4.card-title
-            = @quote.title
-          %p.card-text
-            = render_with_tags(@quote.explanation)
-          %hr/
-          投稿者:
-          = link_to user_path(@quote.user_id) do
-            = @quote.user.nickname
-            - if user_signed_in? && current_user != @quote.user
-              - if @quote.user.followed_by?(current_user)
-                = link_to user_relationships_path(@quote.user_id), method: :delete, class: "quote" do
-                  %button.btn.btn-primary.FollowBtn{:type => "button"} フォロー中
-              - else
-                = link_to user_relationships_path(@quote.user_id), method: :post, class: "quote" do
-                  %button.btn.btn-outline-primary.FollowBtn{:type => "button"} フォローする
-          %hr/
-          .CountBox
-            - if user_signed_in?
-              .comment-count
-                💬
-                = @quote.comments.count
-            - if user_signed_in?
-              .favorite-count
-                - if @quote.favorited_by?(current_user)
-                  = link_to quote_favorites_path(@quote), method: :delete, class: "quote", data: { confirm: "#{@quote.user.niciname}さんのフォローを解除" } do
-                    ❤︎
-                  = @quote.favorites.count
-                - else
-                  = link_to quote_favorites_path(@quote), method: :post, class: "quote" do
-                    ♡
-                  = @quote.favorites.count
+      = render partial: 'layouts/quotes-list', locals: { quote: @quote}
     %br/
     .CommentBox
       %h6 コメント
       .card.CommentIndex
         .card-body
-          - @comments.each do |comment|
-            %p
-              = comment.user.nickname
-              = comment.created_at
-            %p  
-              = comment.text
-            %br/
+          = render @comments
       %br/
       .FormBox
         = form_with model: [@quote, @comment], id: "new_comment" do |f|
