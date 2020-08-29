@@ -1,0 +1,18 @@
+= link_to quote_path(quote), class: "quote" do
+  .card
+    .card-header
+      = quote.citation
+    .card-body
+      %h4.card-title
+        = quote.title
+      %p.card-text
+        = render_with_tags(quote.explanation)
+      %hr/
+      投稿者:
+      = link_to user_path(quote.user.id) do
+        = quote.user.nickname
+        = render partial: 'layouts/follow', locals: { quote: quote}
+      %hr/
+      .CountBox
+        = render partial: 'layouts/comments', locals: { quote: quote}
+        = render partial: 'layouts/favorite', locals: { quote: quote}

@@ -1,0 +1,10 @@
+- if user_signed_in?
+  .favorite-count
+    - if quote.favorited_by?(current_user)
+      = link_to quote_favorites_path(quote.id), method: :delete, class: "quote" do
+        %i.fas.fa-heart
+      = quote.favorites.count
+    - else
+      = link_to quote_favorites_path(quote.id), method: :post, class: "quote" do
+        %i.far.fa-heart
+      = quote.favorites.count

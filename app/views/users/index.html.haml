@@ -1,19 +1,26 @@
 .Wrapper
   .container-login
+    %br/
     %p.text-primary
       = current_user.nickname
       さん
+    %hr/
     .mypage-index
-      %ul
+      %ul.MypageList
         %li.nav-item.active
+          %i.fas.fa-heart
           %a.nav-link.mypage-link.inline{:href => user_favorite_path(current_user.id)} お気に入り
           = current_user.favorites.count
         %li.nav-item
+          %i.fas.fa-check-square
           %a.nav-link.mypage-link.inline{:href => follows_user_path(current_user.id)} フォロー
           = current_user.followings.count
         %li.nav-item
+          %i.fas.fa-check-circle
           %a.nav-link.mypage-link.inline{:href => followers_user_path(current_user.id)} フォロワー
           = current_user.followers.count
         %li.nav-item
+          %i.fas.fa-quote-right
           %a.nav-link.mypage-link.inline{:href => user_path(current_user.id)} 投稿
           = current_user.quotes.count
+      %hr/

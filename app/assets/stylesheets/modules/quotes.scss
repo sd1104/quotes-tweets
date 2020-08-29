@@ -2,9 +2,16 @@
   .Wrapper {
     min-height: calc( 100vh - 110px);
   }
+  .container {
+    margin: 20px 0;
+  }
   .space {
     margin: 40px 0;
     border-bottom: 1px solid transparent;
+  }
+
+  .MypageList {
+    margin-left: 20px;
   }
 
   .QuoteIcon {
@@ -14,19 +21,23 @@
     top: 70px;
     right: 25px;
     .quote {
-      font-size: 69px;
+      line-height: 50px;
+      font-size: 30px;
       color: #fff !important;
     }
   }
+
   .card-explanation {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
   .quote {
     text-decoration: none !important;
     color: black !important;
   }
+
   .CountBox {
     display: flex;
     .comment-count {
@@ -37,6 +48,9 @@
     }
   }
 
+  .fas.fa-heart {
+    color: red;
+  }
 
   .FollowBtn {
     font-size: 10px !important;
@@ -80,5 +94,101 @@
 }
 
 @media screen and (min-width:991px){
+  .Wrapper {
+    min-height: calc( 100vh - 110px);
+    display: flex;
+    justify-content: center;
+    .container {
+      margin: 20px auto;
+      .QuoteCards {
+        width: 1050px;
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+          width: 300px;
+          margin: 0 10px 10px 10px;
+        }
+      }
+    }
+  }
 
+
+  .space {
+    margin: 40px 0;
+    border-bottom: 1px solid transparent;
+  }
+
+
+  .QuoteIcon {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    top: 70px;
+    right: 25px;
+    .quote {
+      font-size: 69px;
+      color: #fff !important;
+    }
+  }
+
+  .card-explanation {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .quote {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  .CountBox {
+    display: flex;
+    .comment-count {
+
+    }
+    .favorite-count {
+      margin-left: 130px;
+    }
+  }
+
+  .FollowBtn {
+    font-size: 10px !important;
+    font-weight: bold !important;
+    padding: 5px;
+    margin-left: 5px;
+  }
+
+  .fas.fa-heart {
+    color: red;
+  }
+
+  .inline {
+    display: inline-block !important;
+    width: 120px;
+  }
+
+  .CommentIndex {
+    height: 180px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  #comment_text {
+    height: 100px;
+    margin-right: 5px;
+  }
+
+  .CommentSubmitBtn {
+    width: 50px;
+    padding: 3px;
+    position: absolute;
+    top: 63px;
+    right: 2px;
+    word-wrap: wrap;
+  }
+
+  .form-group {
+    position: relative;
+  }
 }
