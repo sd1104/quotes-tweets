@@ -34,6 +34,10 @@ class QuotesController < ApplicationController
     end
    end
 
+   def search
+    @quotes = Quote.search(params[:keyword]).order("created_at DESC")
+   end
+
   private
   def quote_params
     params.require(:quote).permit(:title, :citation, :explanation, :tag_ids).merge(user_id: current_user.id)

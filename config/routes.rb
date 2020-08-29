@@ -15,10 +15,14 @@ Rails.application.routes.draw do
   root "quotes#index"
 
   resources :quotes, only: [:index, :new, :create, :show] do
+    collection do
+      get 'search'
+    end
     resource :favorites, only: [:create, :destroy]
     resource :comments, only: :create
   end
 
+  resources :tags, only: :index
   get '/quote/tag/:name', to: "quotes#tag"
   get '/quote/tag' => 'quotes#tag'
   
