@@ -1,7 +1,7 @@
 README.ME
 
 ## QuoteTweets
-Quoteを投稿し、共有するためのアプリです。
+Quoteを投稿し、共有するためのアプリです。  
 ![スクリーンショット 2020-08-30 19 41 39](https://user-images.githubusercontent.com/67669319/91657038-e3a12800-eaf8-11ea-8479-c329f7dba582.png)
 
 ## アプリ紹介
