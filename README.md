@@ -22,19 +22,19 @@ Quoteとは引用という意味です。
 
 ## インストール使用まで
 1. Git-Hubからクローンする。
-  `$ git clone https://github.com/sd1104/quotes-tweets.git`
+>`$ git clone https://github.com/sd1104/quotes-tweets.git`
 2. bundleをインストールする。
-  `$ bundle install`
+>`$ bundle install`
 3. データベースを作る。
-  `$ rails db:create`
+`$ rails db:create`
 4. マイグレーションをする。
-  `$ rails db:migrate`
+`$ rails db:migrate`
 5. 初期データを入れる。
-  `$ rails db:seed`
+`$ rails db:seed`
 6. ローカルサーバーを起動する。
-  `$　rails s`
+`$　rails s`
 7. ブラウザに表示。
-  [http://localhost:3000/]をたたく。
+[http://localhost:3000/]をたたく。
 
 
 
