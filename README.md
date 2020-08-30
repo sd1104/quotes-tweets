@@ -41,6 +41,6 @@ Quoteとは引用という意味です。
 [http://localhost:3000/]をたたく。
 
 ## バージョン
-ruby 2.6.5
-Rails 6.0.3.2
-mysql
+ruby 2.6.5  
+Rails 6.0.3.2  
+mysql  
