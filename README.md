@@ -1,5 +1,3 @@
-README.ME
-
 ## QuoteTweets
 Quoteを投稿し、共有するためのアプリです。  
 ![スクリーンショット 2020-08-30 21 10 10](https://user-images.githubusercontent.com/67669319/91658674-3da7ea80-eb05-11ea-891c-f0c8fc839f4a.png)
@@ -24,7 +22,7 @@ Quoteとは引用という意味です。
   - 自身の投稿一覧
 - レスポンシブデザイン対応
 
-## インストール使用まで
+## ローカルでの使用方法
 #### 1. Git-Hubからクローンする。
 `$ git clone https://github.com/sd1104/quotes-tweets.git`
 #### 2. bundleをインストールする。
