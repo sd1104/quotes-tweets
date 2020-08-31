@@ -6,7 +6,7 @@ class Quote < ApplicationRecord
   has_many :tags, through: :quote_tags
 
   validates :title, :citation, :explanation, presence: true
-  validates :title, length: { in: 1..50 }
+  validates :title, length: { in: 1..100 }
   validates :citation, length: { in: 1..50 }
   validates :explanation, length: { in: 1..280 }
 
