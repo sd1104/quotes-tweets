@@ -6,8 +6,13 @@
     .CommentBox
       %h6 コメント
       .card.CommentIndex
-        .card-body
-          = render @comments
+        .card-body.comment-body
+          - @comments.each do |comment|
+            %p
+              = comment.user.nickname
+              = comment.created_at
+            %p  
+              = comment.text
       %br/
       .FormBox
         = form_with model: [@quote, @comment], id: "new_comment" do |f|

@@ -56,12 +56,16 @@
     margin: 4px 0 !important;
   }
 
+  .CountBox {
+    display: flex;
+  }
+
   // _favorite
   .fas.fa-heart {
     color: red;
   }
   .favorite-count {
-    margin-left: 130px;
+    margin-left: 50px;
   }
 
   // _follow
@@ -166,6 +170,10 @@
   color: black !important;
 }
 
+.CountBox {
+  display: flex;
+}
+
 // _follow
 .FollowBtn {
   font-size: 10px !important;
@@ -179,7 +187,7 @@
   color: red;
 }
 .favorite-count {
-  margin-left: 130px;
+  margin-left: 50px;
 }
 
 // users#index
@@ -268,6 +276,10 @@
     color: black !important;
   }
 
+  .CountBox {
+    display: flex;
+  }
+
   // _follow
   .FollowBtn {
     font-size: 10px !important;
@@ -281,7 +293,7 @@
     color: red;
   }
   .favorite-count {
-    margin-left: 130px;
+    margin-left: 50px;
   }
 
   // users#index

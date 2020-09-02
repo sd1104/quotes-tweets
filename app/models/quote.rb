@@ -35,5 +35,9 @@ class Quote < ApplicationRecord
 
   def self.search(keyword)
     Quote.where('(title LIKE?) OR (citation LIKE?) OR (explanation LIKE?)', "%#{keyword}}%", "%#{keyword}%", "%#{keyword}%")
-  end 
+  end
+
+  def created_at
+    attributes['created_at'].strftime("%Y/%m/%d")
+  end
 end
