@@ -8,7 +8,7 @@
         - @quote.each do |quote|
           .BOX
             .block
-              = quote.created_at.strftime("%Y/%m/%d")
+              = quote.created_at
             .block
               = render partial: 'layouts/quotes-list', locals: { quote: quote}
 
