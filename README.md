@@ -55,3 +55,7 @@ Rails 6.0.3.2
   - (開発)MySQL,(本番)PostgreSQL
 - サーバー
   - heroku
+  
+## データベース設計
+
+![Untitled Diagram (3)](https://user-images.githubusercontent.com/67669319/95018773-bd911980-069c-11eb-919f-476359ed0621.png)
