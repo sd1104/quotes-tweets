@@ -2,6 +2,10 @@
 Quoteを投稿し、共有するためのアプリです。  
 ![スクリーンショット 2020-08-30 21 10 10](https://user-images.githubusercontent.com/67669319/91658674-3da7ea80-eb05-11ea-891c-f0c8fc839f4a.png)
 
+ご利用は[コチラ](https://quotetweet.herokuapp.com)
+
+試用の場合はログイン画面にて、ゲストユーザーとしてログインを押下ください。
+
 ## アプリ紹介
 Quoteとは引用という意味です。
 文章を書いているときにちょっと洒落た言葉を引用したいけど何を使えばいいわからない時がよくある。
@@ -40,4 +44,14 @@ Quoteとは引用という意味です。
 
 ## バージョン
 ruby 2.6.5  
-Rails 6.0.3.2  
+Rails 6.0.3.2
+
+## 開発環境　
+- 言語
+  - ruby, ruby on rails, javascript, jQuery
+- ツール
+  - Git-Hub, Git-Hub Desktop, Visual Studio Code
+- DB
+  - (開発)MySQL,(本番)PostgreSQL
+- サーバー
+  - heroku
